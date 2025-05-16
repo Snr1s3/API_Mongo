@@ -1,9 +1,11 @@
 package com.iticbcn.mongoapi.api_mongo.Service;
 
-import com.iticbcn.mongoapi.api_mongo.Models.Usuaris;
-import com.iticbcn.mongoapi.api_mongo.DTO.UsuarisDTO;
-import com.iticbcn.mongoapi.api_mongo.Repositories.UsuarisRepo;
 import org.springframework.stereotype.Service;
+
+import com.iticbcn.mongoapi.api_mongo.DTO.UsuarisDTO;
+import com.iticbcn.mongoapi.api_mongo.Models.Usuaris;
+import com.iticbcn.mongoapi.api_mongo.Repositories.UsuarisRepo;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -11,5 +11,5 @@ public interface UsuariService {
     Mono<Usuaris> findById(String id);
     Flux<Usuaris> findAll();
     Mono<Usuaris> update(UsuarisDTO usuariDTO);
-    Mono<String> delete(String id);
+    Mono<Void> delete(String id);
 }
