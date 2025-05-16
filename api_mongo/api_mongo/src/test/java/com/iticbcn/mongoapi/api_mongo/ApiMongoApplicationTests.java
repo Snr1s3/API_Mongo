@@ -1,4 +1,4 @@
-package com.api.mongo.api_mongo;
+package com.iticbcn.mongoapi.api_mongo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
