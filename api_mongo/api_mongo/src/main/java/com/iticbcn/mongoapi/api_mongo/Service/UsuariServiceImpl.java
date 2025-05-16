@@ -1,12 +1,13 @@
 package com.iticbcn.mongoapi.api_mongo.Service;
 
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import com.iticbcn.mongoapi.api_mongo.DTO.UsuarisDTO;
 import com.iticbcn.mongoapi.api_mongo.Mapper.UsuarisMapper;
 import com.iticbcn.mongoapi.api_mongo.Models.Usuaris;
 import com.iticbcn.mongoapi.api_mongo.Repositories.UsuarisRepo;
-import org.bson.types.ObjectId;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -55,5 +56,11 @@ public class UsuariServiceImpl implements UsuariService {
     @Override
     public Mono<Void> delete(String id) {
         return usuarisRepo.deleteById(id);
+    }
+
+    @Override
+    public Flux<UsuarisDTO> findByNomRegex(String regex) {
+        return usuarisRepo.findByNomRegex(regex)
+                .map(usuarisMapper::toDto);
     }
 }

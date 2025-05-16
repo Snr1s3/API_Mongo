@@ -11,4 +11,5 @@ public interface UsuariService {
     Flux<UsuarisDTO> findAll();
     Mono<UsuarisDTO> update(UsuarisDTO usuariDTO);
     Mono<Void> delete(String id);
+    Flux<UsuarisDTO> findByNomRegex(String regex);
 }

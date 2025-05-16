@@ -48,7 +48,6 @@ public class RESTController {
     public Flux<UsuarisDTO> findAll() {
         return usuarisService.findAll()
                 .onErrorResume(e -> {
-                    // Log error if needed
                     return Flux.empty();
                 });
     }
@@ -64,4 +63,13 @@ public class RESTController {
     public Mono<Void> delete(@PathVariable String id) {
         return usuarisService.delete(id);
     }  
+
+    @GetMapping("/search/{regex}")
+    public Flux<UsuarisDTO> searchByNomRegex(@PathVariable String regex) {
+        return usuarisService.findByNomRegex(regex)
+                .onErrorResume(e -> {
+                    e.printStackTrace();
+                    return Flux.empty();
+                });
+    }
 }
