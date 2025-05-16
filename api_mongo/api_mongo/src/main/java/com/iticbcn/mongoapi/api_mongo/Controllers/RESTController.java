@@ -29,7 +29,7 @@ public class RESTController {
     }
 
     @PutMapping("/update")
-    public Usuaris update(@RequestBody Usuaris usuari) {
+    public Usuaris update(@RequestBody UsuarisDTO usuari) {
         return usuarisService.update(usuari);
     }
 
