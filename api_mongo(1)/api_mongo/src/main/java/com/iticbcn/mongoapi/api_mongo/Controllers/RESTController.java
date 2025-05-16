@@ -1,7 +1,6 @@
 package com.iticbcn.mongoapi.api_mongo.Controller;
-
-import com.iticbcn.mongoapi.api_mongo.Model.Usuaris;
-import com.iticbcn.mongoapi.api_mongo.Service.UsuarisService;
+import com.iticbcn.mongoapi.api_mongo.Models.Usuaris;
+import com.iticbcn.mongoapi.api_mongo.Service.UsuariService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +11,7 @@ import java.util.List;
 public class RESTController {
 
     @Autowired
-    private UsuarisService usuarisService;
+    private UsuariService usuarisService;
 
     @PostMapping("/save")
     public Usuaris save(@RequestBody Usuaris usuari) {
