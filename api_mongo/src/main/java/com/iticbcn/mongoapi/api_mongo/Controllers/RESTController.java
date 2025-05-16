@@ -3,7 +3,9 @@ import com.iticbcn.mongoapi.api_mongo.Models.Usuaris;
 import com.iticbcn.mongoapi.api_mongo.Service.UsuariService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import reactor.core.publisher.Mono;
+import reactor.core.publisher.Flux;
+import com.iticbcn.mongoapi.api_mongo.DTO.UsuarisDTO;
 import java.util.List;
 
 @RestController
@@ -14,27 +16,27 @@ public class RESTController {
     private UsuariService usuarisService;
 
     @PostMapping("/save")
-    public Usuaris save(@RequestBody Usuaris usuari) {
+    public Mono<Usuaris> save(@RequestBody Usuaris usuari) {
         return usuarisService.save(usuari);
     }
 
     @GetMapping("/{id}")
-    public Usuaris findById(@PathVariable String id) {
+    public Mono<Usuaris> findById(@PathVariable String id) {
         return usuarisService.findById(id);
     }
 
     @GetMapping("/all")
-    public List<Usuaris> findAll() {
+    public Flux<Usuaris> findAll() {
         return usuarisService.findAll();
     }
 
     @PutMapping("/update")
-    public Usuaris update(@RequestBody UsuarisDTO usuari) {
+    public Mono<Usuaris> update(@RequestBody UsuarisDTO usuari) {
         return usuarisService.update(usuari);
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable String id) {
+    public Mono<Void> delete(@PathVariable String id) {
         return usuarisService.delete(id);
     } 
 }
