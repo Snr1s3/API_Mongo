@@ -47,7 +47,7 @@ Usuaris existents després d'eliminar:
 
 ![alt text](images/image11.png)
 
-### Millores i preguntes de reflexió
+# Millores i preguntes de reflexió
 ## Afegiu un endpoint que cerqui per un camp de tipus String on feu servir regex. Afegiu el que calgui al servei, repositori, etc.
 
 ![alt text](images/image12.png)
