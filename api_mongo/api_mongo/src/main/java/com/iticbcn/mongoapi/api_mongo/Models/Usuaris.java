@@ -16,4 +16,9 @@ public class Usuaris {
     private String id;
     private String nom;
     private int edat;
+    private String cognom;
+    private String correuElectronic;
+    private String telefon;
+    private String adreca;
+    private boolean actiu;
 }
